@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --ease-atelier: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #1C1615;
+  color: #FAF7F4;
+  overflow-x: clip;
+  letter-spacing: 0.01em;
+}
+
+@layer components {
+  /* Unified Haute Parfumerie Button System */
+  .btn-atelier-dark {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 h-[46px] bg-[#1C1615] text-[#FAF7F4] border border-[#1C1615] text-[10.5px] uppercase tracking-[0.24em] font-medium select-none;
+    transition:
+      transform 0.55s var(--ease-atelier),
+      background-color 0.4s var(--ease-atelier),
+      border-color 0.4s var(--ease-atelier),
+      color 0.4s var(--ease-atelier),
+      box-shadow 0.4s var(--ease-atelier);
+  }
+  .btn-atelier-dark:hover:not(:disabled) {
+    @apply bg-[#8A5A5A] border-[#8A5A5A] text-[#FAF7F4];
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -10px rgba(28, 22, 21, 0.35);
+  }
+
+  .btn-atelier-blush {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 h-[46px] bg-[#E2C0BC] text-[#1C1615] border border-[#E2C0BC] text-[10.5px] uppercase tracking-[0.24em] font-medium select-none;
+    transition:
+      transform 0.55s var(--ease-atelier),
+      background-color 0.4s var(--ease-atelier),
+      border-color 0.4s var(--ease-atelier),
+      color 0.4s var(--ease-atelier),
+      box-shadow 0.4s var(--ease-atelier);
+  }
+  .btn-atelier-blush:hover:not(:disabled) {
+    @apply bg-[#FAF7F4] border-[#FAF7F4] text-[#1C1615];
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(226, 192, 188, 0.35);
+  }
+
+  .btn-atelier-outline-light {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 h-[46px] bg-transparent text-[#FAF7F4] border border-[#FAF7F4]/60 text-[10.5px] uppercase tracking-[0.24em] font-medium select-none backdrop-blur-[2px];
+    transition:
+      transform 0.55s var(--ease-atelier),
+      background-color 0.4s var(--ease-atelier),
+      border-color 0.4s var(--ease-atelier),
+      color 0.4s var(--ease-atelier);
+  }
+  .btn-atelier-outline-light:hover:not(:disabled) {
+    @apply bg-[#FAF7F4] border-[#FAF7F4] text-[#1C1615];
+    transform: translateY(-2px);
+  }
+
+  .btn-atelier-outline-dark {
+    @apply inline-flex items-center justify-center gap-2.5 px-7 h-[46px] bg-transparent text-[#1C1615] border border-[#D4B8AE] text-[10.5px] uppercase tracking-[0.24em] font-medium select-none;
+    transition:
+      transform 0.55s var(--ease-atelier),
+      background-color 0.4s var(--ease-atelier),
+      border-color 0.4s var(--ease-atelier),
+      color 0.4s var(--ease-atelier);
+  }
+  .btn-atelier-outline-dark:hover:not(:disabled) {
+    @apply bg-[#F4EDE7] border-[#8A5A5A] text-[#1C1615];
+    transform: translateY(-2px);
+  }
+
+  /* Refined Luxury Input */
+  .input-atelier {
+    @apply w-full bg-[#FCFAF8] border border-[#DED4CC] px-4 py-3 text-[13px] text-[#1C1615] placeholder:text-[#9A8C88] transition-colors duration-300 focus:border-[#8A5A5A] focus:bg-white focus:outline-none;
+  }
+
+  .label-atelier {
+    @apply block text-[10px] uppercase tracking-[0.24em] text-[#6E5F5C] font-medium mb-2;
+  }
+}
+
+/* Smooth Progress Fill for Hero Indicators */
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-hero-progress {
+  transform-origin: left center;
+  animation: heroProgress 6.8s linear forwards;
+}
+
+/* Subtle Page Route Entrance */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: pageEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth Modal & Drawer Backdrop / Panel Animations */
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawerSlideLeft {
+  from {
+    opacity: 0.6;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawerSlideRight {
+  from {
+    opacity: 0.6;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-backdrop {
+  animation: backdropFade 0.35s ease-out forwards;
+}
+.animate-drawer-right {
+  animation: drawerSlideLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-drawer-left {
+  animation: drawerSlideRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-modal-up {
+  animation: modalScaleUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 640px) {
+  .btn-atelier-dark:hover:not(:disabled),
+  .btn-atelier-blush:hover:not(:disabled),
+  .btn-atelier-outline-light:hover:not(:disabled),
+  .btn-atelier-outline-dark:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1C1615;
+}
+::-webkit-scrollbar-thumb {
+  background: #5A4E4C;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E6B6B;
+}
