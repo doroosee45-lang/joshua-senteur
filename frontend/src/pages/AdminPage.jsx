@@ -333,13 +333,6 @@ export default function AdminPage() {
               Accéder à l’Espace Vendeur
             </button>
           </form>
-
-          <div className="mt-6 pt-5 border-t border-white/10 text-center">
-            <p className="text-[11px] font-light text-[#D4B8AE]/80">
-              Accès initial :{' '}
-              <code className="px-2 py-0.5 bg-[#1C1615] text-[#E2C0BC] font-mono">joshua2026</code>
-            </p>
-          </div>
         </div>
       </div>
     );
